@@ -4,3 +4,6 @@ djangorestframework-simplejwt
 Pillow
 whitenoise
 gunicorn
+pylint
+pylint-django
+pylint-plugin-utils
