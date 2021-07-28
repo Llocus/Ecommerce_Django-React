@@ -3,3 +3,4 @@ django-cors-headers
 djangorestframework-simplejwt
 Pillow
 whitenoise
+gunicorn
