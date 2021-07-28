@@ -1,5 +1,6 @@
 from django.contrib.auth.models import update_last_login
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import serializers
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
@@ -31,6 +32,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 
 @api_view(['POST'])
+@csrf_exempt
 def registerUser(request):
     data = request.data
 
