@@ -85,7 +85,7 @@ function ProductEditScreen({match, history}) {
             }
 
             
-            const { data } = await axios.post(`http://192.168.1.3:8000/api/products/upload/`, formData, config)
+            const { data } = await axios.post(`http://127.0.0.1:6367/api/products/upload/`, formData, config)
 
         
 
