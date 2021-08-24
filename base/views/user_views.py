@@ -92,6 +92,10 @@ def getUserById(request, pk):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateUser(request, pk):
+    
+    if request.user.id != pk:
+        message = {'detail': 'You cant update others profiles!'}
+        return Response(message, status=status.HTTP_400_BAD_REQUEST)
     user = User.objects.get(id=pk)
 
     data = request.data
