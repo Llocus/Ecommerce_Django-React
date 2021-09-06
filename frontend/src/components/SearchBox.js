@@ -17,26 +17,30 @@ function SearchBox() {
     }
 
     return (
-        <Form onSubmit={submitHandler} inline>
+        <Form onSubmit={submitHandler} inline>    
             <Row>
+            <div class="input-group">
+            <div class="form-outline">
                 <Col>
             <Form.Control
                 type='text'
                 name='q'
                 onChange={(e) => setKeyword(e.target.value)}
-                className='mr-sm-2 ml-sm-5'
+                className=' mr-sm-2 ml-sm-5'
+                placeholder="Search"
             >
             </Form.Control>
                 </Col>
+            </div>
                 <Col>
             <Button
                 type='submit'
-                variant='outline-success'
-                className= 'p-2'
+                variant='btn btn-primary'
+                className= 'fas fa-search'
             >
-                Submit
             </Button>
             </Col>
+            </div>
             </Row>
         </Form>
     )

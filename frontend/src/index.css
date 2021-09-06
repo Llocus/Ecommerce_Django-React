@@ -48,8 +48,11 @@ h3{
 }
 
 #menuBarItens {
-  padding-top: 5px;
   padding-left: 40%;
+}
+
+SearchBox {
+  padding-top: 20px;
 }
 
 @media (max-width: 900px) {
