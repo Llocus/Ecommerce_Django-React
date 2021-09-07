@@ -87,7 +87,7 @@ function OrderScreen({match, history}) {
                             <p><strong>Email: </strong><a href={`mailto:${order.user.email}`}>{order.user.email}</a> </p>
                             <p>
                                 <strong>Shipping: </strong>
-                                {order.shippingAddress.address}, {order.shippingAddress.city},
+                                {order.shippingAddress.address}, {order.shippingAddress.city}, {order.shippingAddress.state},
                                 {'  '}
                                 {order.shippingAddress.postalCode},
                                 {'  '}
@@ -95,7 +95,7 @@ function OrderScreen({match, history}) {
                             </p>
 
                             {order.isDelivered ? (
-                                <Message variant='success'>Delivered on {order.deleveredAt.substring(0,10)}</Message>
+                                <Message variant='success'>Delivered on {order.deliveredAt.substring(0,10)}</Message>
                             ) : (
                                 <Message variant='warning'>Not Delivered</Message>
                             )}
@@ -194,6 +194,17 @@ function OrderScreen({match, history}) {
                                 )}    
                         </ListGroup>
                         {loadingDeliver && <Loader/>}
+                        {userInfo && userInfo.isAdmin && !order.isPaid && (
+                            <ListGroup.Item>
+                                <Button
+                                    type='button'
+                                    className='btn btn-block'
+                                    onClick={() => {successPaymentHandler(true)}}
+                                >
+                                    Mark As Paid
+                                </Button>
+                            </ListGroup.Item>
+                        )}
                         {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                             <ListGroup.Item>
                                 <Button

@@ -32,6 +32,7 @@ def addOrderItems(request):
             order=order,
             address=data['shippingAddress']['address'],
             city=data['shippingAddress']['city'],
+            state=data['shippingAddress']['state'],
             postalCode=data['shippingAddress']['postalCode'],
             country=data['shippingAddress']['country'],
         )

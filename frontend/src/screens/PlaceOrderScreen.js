@@ -53,7 +53,7 @@ function PlaceOrderScreen({history}) {
 
                             <p>
                                 <strong>Shipping: </strong>
-                                {cart.shippingAddress.address}, {cart.shippingAddress.city},
+                                {cart.shippingAddress.address}, {cart.shippingAddress.city}, {cart.shippingAddress.state},
                                 {'  '}
                                 {cart.shippingAddress.postalCode},
                                 {'  '}
